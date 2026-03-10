@@ -3,7 +3,7 @@
 
 ### Paper Information
 - **Author(s):** Naveen Kumar Bandaru
-- **Published In:** International Journal of IJISAE
+- **Published In:** International Journal of Intelligent Systems and Applications in Engineering (IJISAE)
 - **Publication Date:** June, 2023
 - **ISSN:**  2147-6799
 
