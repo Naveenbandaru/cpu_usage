@@ -8,37 +8,33 @@
 - **ISSN:**  2147-6799
 
 ### Abstract
-This paper addresses the problem of excessive CPU utilization in network congestion monitoring within distributed and cloud infrastructures. Modern systems collect telemetry such as bandwidth usage, packet loss, queue occupancy, and delay statistics, yet conventional frameworks analyze these metrics independently at each node. This repetitive data collection and duplicate analysis create high computational overhead, frequent synchronization, and delayed identification of bottlenecks. As the number of nodes grows, telemetry streams expand proportionally, triggering repeated diagnostics and unnecessary reprocessing that further amplify processor load. Consequently, centralized aggregation and monitoring costs reduce throughput, limit scalability, and compromise service stability across distributed environments.
+High concurrency transaction processing systems often experience performance degradation due to conflicts among simultaneous read and write operations. Conventional mechanisms such as Two Phase Locking and Optimistic Concurrency Control introduce blocking, repeated retries, and significant processor overhead. This work examines the impact of these mechanisms on CPU utilization and scalability in distributed environments. A lightweight runtime conflict detection approach is introduced to identify conflicts earlier during execution and reduce unnecessary computation. Experimental evaluation across multiple cluster sizes demonstrates improved processor efficiency and better scalability in transaction processing systems.
 
-### Key Contributions
-- **Cross‑Node Telemetry Correlation:**  
-Introduced a monitoring approach that correlates telemetry across nodes, reducing redundant computation and improving CPU efficiency compared to conventional independent node analysis.
+### Major Research Contributions
+- **Lightweight Runtime Conflict Detection Mechanism:**  
+Introduced a runtime method that detects transactional conflicts early during execution using compact metadata instead of relying on heavy locking or late validation.
 
-- **Processor‑Efficient Monitoring Design:**  
-Developed mechanisms that minimize duplicate diagnostics and synchronization overhead, lowering CPU utilization while maintaining visibility into congestion events across distributed systems.
+- **Processor Efficient Transaction Execution:**  
+Designed a conflict management approach that reduces blocking synchronization and repeated transaction retries, leading to lower processor utilization during high concurrency workloads.
+- **Distributed Experimental Evaluation:** 
+Implemented a transaction processing model using Go based concurrent workers to simulate distributed workloads and evaluate processor utilization across cluster sizes.
 
-- **Simulation and Validation:** 
-Implemented a Go‑based simulation to model conventional monitoring overhead, validating how repeated local analysis and central aggregation lead to high processor load.
+- **Scalability Analysis Across Cluster Sizes:**  
+Conducted experiments on clusters with 3, 5, 7, 9, and 11 nodes to analyze how CPU utilization changes as transaction processing systems scale.
 
-- **Scalability Enhancement:**  
-Demonstrated that coordinated telemetry analysis prevents linear growth of CPU consumption with cluster size, enabling scalable monitoring in cloud and distributed infrastructures.
+### Practical Significance and Impact
+- **Reduced Processor Utilization:**
+The lightweight runtime approach significantly lowers CPU usage compared with conventional locking and optimistic concurrency control mechanisms.
 
-### Relevance & Real-World Impact
-- **Reduced CPU Utilization:**
-Achieved significant processor efficiency by eliminating redundant monitoring tasks, freeing resources for application workloads and improving responsiveness.
+- **Improved Transaction Processing Efficiency:**  
+Early conflict detection minimizes wasted computation caused by blocking synchronization and repeated transaction retries.
 
-- **Improved Latency and Throughput:**  
-Lower monitoring overhead directly reduces latency and increases throughput, enhancing service stability in distributed environments.
+- **Better Scalability for Distributed Systems:**  
+Processor consumption decreases steadily as cluster size increases, demonstrating efficient resource utilization and improved scalability.
 
-- **Scalable Cloud Deployment:**  
-Framework supports large clusters without proportional CPU growth, addressing scalability challenges in modern cloud infrastructures.
+- **Suitability for High Concurrency Platforms:**  
+The framework supports efficient transaction processing in environments such as distributed databases, cloud systems, and microservice based platforms.
 
-- **Operational Cost and Energy Savings:**  
-Efficient monitoring reduces unnecessary computation, lowering energy consumption and operational costs in data centers.
-
-- **Practical Applicability:**
-Provides a reference model for industry and research, offering a processor‑efficient monitoring design suitable for production systems and academic exploration.
- 
 ### Experimental Results (Summary)
 
   | Nodes | Local Telemetry CPU | Telemetry corelation CPU | Improvment (%)  |
