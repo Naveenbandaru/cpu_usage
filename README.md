@@ -37,7 +37,7 @@ The framework supports efficient transaction processing in environments such as 
 
 ### Experimental Results (Summary)
 
-  | Nodes | Lock Based 2PL CPU %| Lightweight Runtime Detection %| Improvment (%) |
+  | Nodes | Lock Based 2PL CPU %| Lightweight Runtime Detection %| Improvement (%) |
   |-------|---------------------| -------------------------------| ---------------|
   | 3     |  88                 | 55                             | 37.50          |
   | 5     |  84                 | 49                             | 41.67          |
